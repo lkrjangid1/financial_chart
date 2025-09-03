@@ -1,3 +1,5 @@
+import 'package:example/demos/drawing_tools_example.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +32,7 @@ final routes = {
   // '/demo/markers': (context) => const DemoMarkersPage(),
   '/demo/loading_data': (context) => const DemoDynamicDataPage(),
   '/demo/live_update': (context) => const DemoLiveUpdatePage(),
+  '/demo/dr_tool': (context) => const DrawingToolsDemoPage(),
   // '/demo/testing': (context) => const PlayApp(),
   // '/demo/test_data_loader': (context) => const ChartDataLoadDemoPage(),
 };
@@ -77,6 +80,14 @@ void main() {
   // if (kDebugMode) {
   //  debugPrintGestureArenaDiagnostics = true;
   // }
+  PlatformDispatcher.instance.onError = (error, stack) {
+    debugPrint('PlatformDispatcher.instance.onError: $error  \n stack: $stack');
+    return true;
+  }; 
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    debugPrint('FlutterError.onError: $details');
+  };
   runApp(const MyApp());
 }
 

@@ -6,6 +6,11 @@ export 'src/data/data_source.dart';
 export 'src/graphs/graphs.dart';
 export 'src/markers/markers.dart';
 
+// Drawing Tools exports
+export 'src/drawing_tools/drawing_tools.dart';
+export 'src/drawing_tools/drawing_tools_handler.dart';
+export 'src/drawing_tools/drawing_tools_manager.dart';
+
 export 'src/style/label_style.dart';
 export 'src/style/paint_style.dart';
 
